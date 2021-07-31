@@ -13,6 +13,51 @@
 </head>
 
 <body>
+    <header>
+        <h1> Vacation Destination Wish List</h1>
+        <p> Found exciting places to visit on your next vactions? Use the form below to add them to your wish list</p>
+    </header>
+
+    <main>
+        <form id="destination_details_form">
+            <label for="name">Destination Name</label>
+            <input type="text" id="name" placeholder="provide destination name" required>
+            
+            <label for="location"> Location Name</label>
+            <input type="text"  id="location" placeholder="provide location of the destination">
+
+            <label for="photo">Photo</label>
+            <input type="url"  id="photo" placeholder="provide a url for the photo">
+            
+            <label for="description">Description</label>
+            <textarea  id="description" placeholder="provide the description" ></textarea>
+
+            <button type="submit">Add to List</button>
+
+        </form>
+
+        <article id="wishlist">
+            <h2 id="title">Enter destination details</h2>
+            <div id="Destination_details">
+                <!-- content created by JS -->
+                <div class="card">
+                    <img src="images/signpost.jpg" alt="card">
+                    <div class="card_body">
+                        <h3>Destination Name</h3>
+                        <h4>Destination Location</h4>
+                        <p>Destiantion Description</p>
+                        <button>remove</button>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+
+
+
+    </main>
+
 
     <!-- Our JavaScript -->
     <script src="script.js"></script>
