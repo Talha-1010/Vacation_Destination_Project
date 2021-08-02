@@ -3,8 +3,6 @@
 "use strict"
 var myForm = document.getElementById("destination_details_form");
 
-// var destDetails = document.getElementById("Destination_details");
-
 myForm.addEventListener('submit',formSubmit);
 
 function formSubmit(event)
@@ -15,8 +13,8 @@ function formSubmit(event)
     var destPhoto = event.target.elements['photo'].value;
     var destDesc =event.target.elements['description'].value;
 
-    //clear all fields
-
+ 
+       //clearing all fields
     for(var i=0; i<myForm.length;i++)
     {
         myForm.elements[i].value="";
@@ -78,17 +76,22 @@ function createNewCard(destName,destLocation,destPhoto,destDesc)
     var paragraph = document.createElement("p");
     if(destDesc.length>0)
     {
-        heading4.innerHTML=destDesc;
+        paragraph.innerHTML=destDesc;
     }
     else
     {
-        heading4.innerHTML="Destination description";
+        paragraph.innerHTML="Destination description";
     }
     card_body.appendChild(paragraph);
-
+    
+    
     var button = document.createElement("button");
     button.innerText ="remove";
     card_body.appendChild(button);
+
+    button.addEventListener("click",removeDestination);
+
+
 
     card.appendChild(card_body);
 
@@ -96,6 +99,12 @@ function createNewCard(destName,destLocation,destPhoto,destDesc)
 
 }
 
+//Removes the destination card from wishlist
+function removeDestination(event)
+{   
+    var myobj = document.getElementById("card");
+    myobj.remove();
+}
 
 
 
